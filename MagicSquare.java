@@ -9,12 +9,14 @@ public class MagicSquare {
 	 * square or not.
 	 * */
 	public static boolean isMagicSquare(int[][]a) {
+//		checking it is a square
 		for(int i=0; i<a.length; i++) {
 			if(a.length != a[i].length) {
 				return false;
 			}
 		}
 			System.out.println("it is a square");
+//			checking possible  num from 1 to side length^2 in the list 
 			ArrayList<Integer> arrlist = new ArrayList<>();
 			for(int i=0; i<Math.pow(a.length, 2); i++) {
 				if(isInList(arrlist,i)) {
@@ -25,11 +27,13 @@ public class MagicSquare {
 				}
 			}
 			System.out.println("All possible numbers occur exactly one time");
+//			checking of diagonal, rows and columns sum
 			int sum =0;
 			int temp =0;
 			for(int i=0; i<a.length; i++) {
 				sum += a[i][i];
 			}
+			
 			for(int x=0 ;x< a.length; x++) {
 				for(int y=0; y<a[x].length; y++) {
 					temp +=a[x][y];
@@ -37,8 +41,7 @@ public class MagicSquare {
 					return false;
 				}temp =0;
 			}
-			
-			System.out.println("Diagonal and rows are equal");
+		
 			for(int x=0 ;x< a.length; x++) {
 				for(int y=0; y<a[x].length; y++) {
 					temp += a[y][x];
@@ -46,7 +49,9 @@ public class MagicSquare {
 					return false;
 				}
 				temp =0;
-			}		
+			}	
+			System.out.println("Diagonal and rows and columns sum are equal");
+
 			return true;
 
 	}
