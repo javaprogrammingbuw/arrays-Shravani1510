@@ -14,12 +14,12 @@ public class MagicSquare {
 			if(a.length != a[i].length) {
 				return false;
 			}
-		}
+		} // NOTE: indentation is a little bit off here
 			System.out.println("it is a square");
 //			checking possible  num from 1 to side length^2 in the list 
-			ArrayList<Integer> arrlist = new ArrayList<>();
+			ArrayList<Integer> arrlist = new ArrayList<>();	// NOTE: nice solution, could also be solved without ArrayList's - using an array of size 
 			for(int i=0; i<Math.pow(a.length, 2); i++) {
-				if(isInList(arrlist,i)) {
+				if(isInList(arrlist,i)) { // NOTE: you don't need to check it on your own, use arrlist.contains(...)
 					return false;
 				}
 				else {

@@ -18,7 +18,7 @@ public class SortAndSearch {
 					arr[j+1]=temp;
 				}
 		return arr;
-	}
+	} // NOTE: would be nice to add a blank line after each method
 	public static int binSrch(int[] arr,int max, int min, int srch) {
 		
 		arr=bubbleSrt(arr);
@@ -36,14 +36,15 @@ public class SortAndSearch {
 			min = center;
 			return binSrch(arr,max,min,srch);
 		}
-	}
+	} // NOTE: would be nice to add a blank line after each method
 	public static void main(String[] args) {
 		
 		int [] arr = {5,8,16,3,15,4};
 		System.out.println(Arrays.toString(bubbleSrt(arr)));
-		System.out.println(binSrch(arr,arr.length-1, 0, 8));
+		System.out.println(binSrch(arr,arr.length-1, 0, 8)); // NOTE: searching for an element not in the array would result in a stack-overflow.
+		                                                     //       please have a look at this again
 	
-		
+		// NOTE: having huge spaces looks strage - could be removed (above and below code)
 		
 	}
 }

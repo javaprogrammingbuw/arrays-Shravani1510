@@ -18,7 +18,7 @@ public class MatrixMultiplication {
 		  }
 		  return result;
 	 
-	}
+	} // NOTE: indentation is a little bit off from here
 	 public static void main(String[] args) {
 		 int[][] a = {{3,2},{1,2}}; 
 		  int[][] b = {{2,4},{6,5}};
