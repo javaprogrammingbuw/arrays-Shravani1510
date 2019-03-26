@@ -19,32 +19,32 @@ public class SortAndSearch {
 				}
 		return arr;
 	} // NOTE: would be nice to add a blank line after each method
-	public static int binSrch(int[] arr,int max, int min, int srch) {
+	public static int binSrch(int[] arr,int max, int min, int srch, int centerOld) {
 		
 		arr=bubbleSrt(arr);
 		int center =min + ((max-min)/2);
-		if(center<0) {
-			return -1;
+		if(center<0 || center == centerOld) {
+				return -1;
 		}
 		if(srch == arr[center]) {
 			return center;
 		}else if(srch < arr[center]) {
 			
 			max =center;
-			return binSrch(arr, max,min,srch);
+			return binSrch(arr, max,min,srch, center);
 		}else {
 			min = center;
-			return binSrch(arr,max,min,srch);
+			return binSrch(arr,max,min,srch, center);
 		}
 	} // NOTE: would be nice to add a blank line after each method
+	
 	public static void main(String[] args) {
 		
 		int [] arr = {5,8,16,3,15,4};
 		System.out.println(Arrays.toString(bubbleSrt(arr)));
-		System.out.println(binSrch(arr,arr.length-1, 0, 8)); // NOTE: searching for an element not in the array would result in a stack-overflow.
+		System.out.println(binSrch(arr,arr.length-1, 0, 7, 0)); // NOTE: searching for an element not in the array would result in a stack-overflow.
 		                                                     //       please have a look at this again
 	
 		// NOTE: having huge spaces looks strage - could be removed (above and below code)
-		
 	}
 }
